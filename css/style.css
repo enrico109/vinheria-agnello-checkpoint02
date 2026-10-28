@@ -1,0 +1,165 @@
+
+:root {
+  --bordo: #5b1a2b;
+  --bordo-escuro: #3d0f1c;
+  --papel: #f5f3f6;
+  --branco: #ffffff;
+  --tinta: #26191e;
+  --tinta-suave: #6b5b61;
+  --dourado: #a58a4b;
+  --alerta: #b3261e;
+  --alerta-fundo: #fbe9e7;
+  --ok: #2f6b4a;
+  --ok-fundo: #e5f1ea;
+  --linha: #ddd5d9;
+  --fonte-titulo: "Fraunces", Georgia, "Times New Roman", serif;
+  --fonte-texto: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  line-height: 1.55;
+}
+
+.topo {
+  background: var(--bordo);
+  color: var(--papel);
+  padding: 3rem 1.5rem 2.5rem;
+  border-bottom: 6px solid var(--dourado);
+}
+
+.topo h1 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.subtitulo {
+  margin: 0.6rem 0 0;
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+.topo, main, .rodape {
+  padding-left: max(1.5rem, calc((100% - 960px) / 2));
+  padding-right: max(1.5rem, calc((100% - 960px) / 2));
+}
+
+main { padding-top: 2rem; padding-bottom: 3rem; }
+
+.intro { max-width: 62ch; }
+
+#btnIniciar {
+  background: var(--bordo);
+  color: var(--branco);
+  border: 0;
+  border-radius: 4px;
+  padding: 0.85rem 1.6rem;
+  font: 600 1rem var(--fonte-texto);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+#btnIniciar:hover { background: var(--bordo-escuro); }
+#btnIniciar:focus-visible { outline: 3px solid var(--dourado); outline-offset: 3px; }
+
+.dica { color: var(--tinta-suave); font-size: 0.9rem; }
+
+#resultado { margin-top: 2.5rem; }
+
+.vazio {
+  padding: 1.5rem;
+  border: 1px dashed var(--linha);
+  border-radius: 4px;
+  color: var(--tinta-suave);
+}
+
+.resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.resumo div {
+  background: var(--branco);
+  border-left: 4px solid var(--bordo);
+  padding: 1rem 1.2rem;
+}
+
+.resumo .numero {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--bordo);
+  line-height: 1.1;
+}
+
+.resumo .rotulo { font-size: 0.9rem; color: var(--tinta-suave); }
+
+h2 {
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin: 0 0 1rem;
+}
+
+.lista-vinhos {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.vinho {
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  border-radius: 4px;
+  padding: 1.2rem;
+}
+
+.vinho.mais-antigo { border: 2px solid var(--dourado); }
+
+.vinho h3 {
+  margin: 0 0 0.6rem;
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+}
+
+.vinho dl { margin: 0 0 0.9rem; display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 0.8rem; }
+.vinho dt { color: var(--tinta-suave); }
+.vinho dd { margin: 0; font-weight: 600; }
+
+.selo {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  margin-right: 0.3rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.selo.ok { background: var(--ok-fundo); color: var(--ok); }
+.selo.baixo { background: var(--alerta-fundo); color: var(--alerta); }
+.selo.destaque { background: var(--dourado); color: var(--branco); }
+
+
+.rodape {
+  border-top: 1px solid var(--linha);
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #btnIniciar { transition: none; }
+}

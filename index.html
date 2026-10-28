@@ -17,6 +17,21 @@
     <p class="subtitulo">Avaliação de estoque e tendência de vinhos</p>
   </header>
 
+  <main>
+    <section class="intro">
+      <p>
+        Cadastre até <strong>5 vinhos</strong> em sequência. Para cada um, informe nome,
+        safra e quantidade em estoque. O sistema classifica a idade do vinho, avisa
+        quando o estoque está baixo (menos de 5 garrafas) e destaca a safra mais antiga.
+      </p>
+      <button id="btnIniciar" type="button">Iniciar cadastro</button>
+      <p class="dica">As perguntas aparecem em janelas do navegador (prompt). Libere pop-ups se necessário.</p>
+    </section>
+
+    <section id="resultado" aria-live="polite">
+      <p class="vazio">Nenhum vinho cadastrado ainda. Clique em “Iniciar cadastro” para começar.</p>
+    </section>
+  </main>
     
   <script src="script.js"></script>
 </body>
